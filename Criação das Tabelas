@@ -1,0 +1,47 @@
+CREATE TABLE Instrutores (
+    id_instrutor INT PRIMARY KEY,
+    nome_instrutor VARCHAR(100) NOT NULL,
+    endereco_instrutor VARCHAR(150),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    tel_instrutor VARCHAR(20),
+    especialidades TEXT,
+    horarios TEXT
+);
+
+CREATE TABLE Alunos (
+    id_alunos INT PRIMARY KEY,
+    nome_aluno VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    peso_aluno DECIMAL(5,2),
+    altura_aluno DECIMAL(4,2),
+    tel_aluno VARCHAR(20)
+);
+
+CREATE TABLE Plano_Treino (
+    id_plano_treino INT PRIMARY KEY,
+    exercicios TEXT NOT NULL,
+    duracao INT, -- minutos
+    data_criacao DATE NOT NULL,
+    id_instrutor INT,
+    id_alunos INT,
+    FOREIGN KEY (id_instrutor) REFERENCES Instrutores(id_instrutor),
+    FOREIGN KEY (id_alunos) REFERENCES Alunos(id_alunos)
+);
+
+CREATE TABLE Classes (
+    id_classe INT PRIMARY KEY,
+    nome_classe VARCHAR(100) NOT NULL,
+    data_aula DATE NOT NULL,
+    qtd_alunos INT,
+    id_instrutor INT,
+    FOREIGN KEY (id_instrutor) REFERENCES Instrutores(id_instrutor)
+);
+
+CREATE TABLE Aluno_Classe (
+    id_classe INT,
+    id_alunos INT,
+    data_matricula DATE,
+    PRIMARY KEY (id_classe, id_alunos),
+    FOREIGN KEY (id_classe) REFERENCES Classes(id_classe),
+    FOREIGN KEY (id_alunos) REFERENCES Alunos(id_alunos)
+);

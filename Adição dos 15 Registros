@@ -1,0 +1,36 @@
+-- Inserção de Instrutores
+INSERT INTO Instrutores VALUES 
+(1, 'Carlos Silva', 'Rua A, 123', 'carlos@academia.com', '1111-1111', 'Musculação', '08:00-12:00'),
+(2, 'Ana Souza', 'Rua B, 456', 'ana@academia.com', '2222-2222', 'Pilates', '14:00-18:00'),
+(3, 'Lucas Pereira', 'Rua C, 789', 'lucas@academia.com', '3333-3333', 'Crossfit', '06:00-10:00'),
+-- ... continue até 15 instrutores
+(15, 'Patrícia Alves', 'Rua O, 2020', 'patricia@academia.com', '1515-1515', 'Yoga', '10:00-12:00');
+
+-- Inserção de Alunos
+INSERT INTO Alunos VALUES 
+(1, 'João Almeida', 'joao@aluno.com', 75.5, 1.75, '9999-1111'),
+(2, 'Maria Silva', 'maria@aluno.com', 60.0, 1.65, '9999-2222'),
+-- ... continue até 15 alunos
+(15, 'Pedro Martins', 'pedro@aluno.com', 80.0, 1.80, '9999-1515');
+
+-- Inserção de Planos de Treino
+INSERT INTO Plano_Treino VALUES 
+(1, 'Supino, Agachamento', 60, CURRENT_DATE - INTERVAL '10 day', 1, 1),
+(2, 'Corrida, Flexão', 45, CURRENT_DATE - INTERVAL '40 day', 2, 2),
+-- ... continue até 15 planos
+(15, 'Ciclismo, Abdominais', 50, CURRENT_DATE - INTERVAL '5 day', 3, 15);
+
+-- Inserção de Classes
+INSERT INTO Classes VALUES 
+(1, 'Musculação', '2025-06-10', 10, 1),
+(2, 'Pilates', '2025-06-12', 8, 2),
+-- ... continue até 15 classes
+(15, 'Yoga', '2025-06-30', 12, 15);
+
+-- Inserção de Aluno_Classe
+INSERT INTO Aluno_Classe VALUES 
+(1, 1, '2025-05-15'),
+(1, 2, '2025-05-16'),
+(2, 3, '2025-05-17'),
+-- ... continue até 15 registros
+(15, 15, '2025-05-30');

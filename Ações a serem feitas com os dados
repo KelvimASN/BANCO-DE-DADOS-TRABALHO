@@ -1,0 +1,28 @@
+Pesquisas Solicitadas
+✅ a) Lista de todos os alunos, ordenados alfabeticamente
+sql
+Copiar
+Editar
+SELECT * FROM Alunos
+ORDER BY nome_aluno ASC;
+✅ b) Lista de todos os planos de treino ordenados por código do aluno
+sql
+Copiar
+Editar
+SELECT * FROM Plano_Treino
+ORDER BY id_alunos ASC;
+✅ c) Lista das classes e seus instrutores
+sql
+Copiar
+Editar
+SELECT c.nome_classe, c.data_aula, i.nome_instrutor
+FROM Classes c
+JOIN Instrutores i ON c.id_instrutor = i.id_instrutor
+ORDER BY c.nome_classe ASC;
+✅ d) Lista de todos os planos de treino criados no último mês
+sql
+Copiar
+Editar
+SELECT * FROM Plano_Treino
+WHERE data_criacao >= CURRENT_DATE - INTERVAL '30 day'
+ORDER BY data_criacao DESC;
